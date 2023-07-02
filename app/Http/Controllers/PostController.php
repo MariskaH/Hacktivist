@@ -34,16 +34,28 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        if (auth()->id() !== $post->user_id) {
+            abort(403);
+        }
+
         return view('posts.show', compact('post'));
     }
 
     public function edit(Post $post)
     {
+        if (auth()->id() !== $post->user_id) {
+            abort(403);
+        }
+
         return view('posts.edit', compact('post'));
     }
 
     public function update(Request $request, Post $post)
     {
+        if (auth()->id() !== $post->user_id) {
+            abort(403);
+        }
+
         $request->validate([
             'title' => 'required',
             'body' => 'required',
@@ -55,6 +67,10 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+        if (auth()->id() !== $post->user_id) {
+            abort(403);
+        }
+
         $post->delete();
         return redirect()->route('posts.index');
     }
