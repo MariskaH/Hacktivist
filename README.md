@@ -21,7 +21,6 @@ To find this feature in the codebase:
 
 This implementation ensures that users can only modify their own blog posts, adhering to the Principle of Least Privilege.
 
-Please note that, while the access control is implemented in this controller, the Principle of Least Privilege should be applied across the entire system. This includes other controllers, database access, file permissions, network communications, etc.
 
 ## Getting Started
 
