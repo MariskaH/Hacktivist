@@ -14,9 +14,18 @@
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div>{{ __('You are logged in!') }}</div>
+
+                    <!-- Add a div here for the Blog button -->
+
+                    <!-- Add a margin to the top of the div -->
+
+                    <div style="margin-top: 20px;">
+                        <a href="{{ route('posts.index') }}" class="btn btn-primary">{{ __('BLOG') }}</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div> @endsection
+</div>
+@endsection
